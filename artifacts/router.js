@@ -51,7 +51,7 @@ router.post('/api/authenticate', function (req, res, next) {console.log('99');
             next(err);
         }
     } catch (error) {console.log('101');
-        let err = new def.NError(500, messages.errInternalServerError, error.message);
+        let err = new def.NError(500111, messages.errInternalServerError, error.message);
         next(err);
     }
 });
