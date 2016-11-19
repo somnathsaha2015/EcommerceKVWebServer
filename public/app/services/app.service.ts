@@ -60,6 +60,7 @@ export class AppService {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('x-access-token', this.getToken());
+        headers.append('Encoding', 'utf8');
         body.token = this.getToken();
         this.http.post(url, body,{headers:headers})
             .map(response => response.json())

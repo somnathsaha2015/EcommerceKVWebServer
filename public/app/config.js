@@ -1,6 +1,6 @@
 "use strict";
 exports.urlHash = {
-    'post:authenticate': '/authenticate',
+    'post:authenticate': '/api/authenticate',
     'post:validate:token': '/api/validate/token',
     'post:forgot:password': '/api/forgot/password',
     'post:send:password': '/api/send/password',

@@ -37,7 +37,7 @@ router.post('/api/validate/token', function (req, res, next) {
 });
 
 //authenticate
-router.post('/authenticate', function (req, res, next) {console.log('99');
+router.post('/api/authenticate', function (req, res, next) {console.log('99');
     try {
 		console.log('100');
         let auth = req.body.auth;
