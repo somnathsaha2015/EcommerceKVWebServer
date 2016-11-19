@@ -38,18 +38,17 @@ router.post('/api/validate/token', function (req, res, next) {
 //authenticate
 router.post('/api/authenticate', function (req, res, next) {
     try {
-		console.log('100');
         let auth = req.body.auth;
         let err;
-        if (auth) {console.log('102');
+        if (auth) {
             var data = { action: 'authenticate', auth: auth };
             handler.edgePush(res, next, 'authenticate', data);
         }
-        else {console.log('103');
+        else {
             let err = new def.NError(404, messages.errAuthStringNotFound, messages.messAuthStringinPostRequest);
             next(err);
         }
-    } catch (error) {console.log('101');
+    } catch (error) {
         let err = new def.NError(500, messages.errInternalServerError, error.message);
         next(err);
     }
