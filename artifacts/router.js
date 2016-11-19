@@ -37,7 +37,7 @@ router.post('/api/validate/token', function (req, res, next) {
 });
 
 //authenticate
-router.post('/api/authenticate', function (req, res, next) {
+router.post('/api/authenticate', function (req, res, next) {console.log('99');
     try {
 		console.log('100');
         let auth = req.body.auth;
@@ -129,7 +129,7 @@ router.post('/api/create/account', function (req, res, next) {
     }
 });
 
-router.all('/api*', function (req, res, next) {
+router.all('/api*', function (req, res, next) {console.log('80');
     // implementation for token verification
     try {
         var token = req.body.token || req.query.token || req.headers['x-access-token'];
