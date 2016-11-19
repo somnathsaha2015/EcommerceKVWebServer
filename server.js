@@ -38,7 +38,7 @@ var allowCrossDomain = function (req, res, next) {
 };
 app.use(allowCrossDomain);
 
-app.get('/*', function (req, res) {
+app.get('/*', function (req, res) {console.log('index.html');
     res.sendFile(path.join(__dirname, 'public','index.html'));
     //res.render(path.join(__dirname, 'public/index1.html'));
 });
