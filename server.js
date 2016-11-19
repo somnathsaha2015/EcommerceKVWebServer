@@ -11,6 +11,7 @@ var app = express();
 app.set('messages', messages);
 app.set('def', def);
 app.set('config', config);
+app.set('port', process.env.port || 1337);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
