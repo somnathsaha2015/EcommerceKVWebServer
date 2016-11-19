@@ -31,7 +31,7 @@ router.post('/api/validate/token', function (req, res, next) {
             next(err);
         }
     } catch (error) {
-        let err = new def.NError(500, messages.errInternalServerError, error.message);
+        let err = new def.NError(50011, messages.errInternalServerError, error.message);
         next(err);
     }
 });
