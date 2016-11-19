@@ -62,7 +62,9 @@ var AppService = (function () {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('x-access-token', this.getToken());
+        headers.append('Encoding', 'utf8');
         body.token = this.getToken();
+        console.log('url='+url);
         this.http.post(url, body, { headers: headers })
             .map(function (response) { return response.json(); })
             .subscribe(function (d) {
