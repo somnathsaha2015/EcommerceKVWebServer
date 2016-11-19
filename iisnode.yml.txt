@@ -1,1 +1,2 @@
 debuggingEnabled: true
+loggingEnabled: true
