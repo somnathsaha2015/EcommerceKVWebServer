@@ -11,6 +11,7 @@ router.init = function (app) {
     def = app.get('def');
     messages = app.get('messages');
     data = { action: 'init', conn: config.connString.replace('@dbName', config.dbName) }
+	console.log('data='+data);
     handler.init(app, data);
 }
 
