@@ -1,2 +1,0 @@
-debuggingEnabled: true
-loggingEnabled: true

@@ -8,7 +8,7 @@ let messages, def, config;
 console.log('Started edge');
 
 var marshal = edge.func({
-    assemblyFile: './KVConnector.dll',
+    assemblyFile: 'KVConnector.dll',
     typeName: 'KVConnector.KVConnection', methodName: 'Invoke'
 });
 

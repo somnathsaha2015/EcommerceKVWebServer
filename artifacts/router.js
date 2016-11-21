@@ -11,7 +11,6 @@ router.init = function (app) {
     def = app.get('def');
     messages = app.get('messages');
     data = { action: 'init', conn: config.connString.replace('@dbName', config.dbName) }
-	console.log('data='+data);
     handler.init(app, data);
 }
 
@@ -31,27 +30,26 @@ router.post('/api/validate/token', function (req, res, next) {
             next(err);
         }
     } catch (error) {
-        let err = new def.NError(50011, messages.errInternalServerError, error.message);
+        let err = new def.NError(500, messages.errInternalServerError, error.message);
         next(err);
     }
 });
 
 //authenticate
-router.post('/api/authenticate', function (req, res, next) {console.log('99');
+router.post('/api/authenticate', function (req, res, next) {
     try {
-		console.log('100');
         let auth = req.body.auth;
         let err;
-        if (auth) {console.log('102');
+        if (auth) {
             var data = { action: 'authenticate', auth: auth };
             handler.edgePush(res, next, 'authenticate', data);
         }
-        else {console.log('103');
+        else {
             let err = new def.NError(404, messages.errAuthStringNotFound, messages.messAuthStringinPostRequest);
             next(err);
         }
-    } catch (error) {console.log('101');
-        let err = new def.NError(500111, messages.errInternalServerError, error.message);
+    } catch (error) {
+        let err = new def.NError(500, messages.errInternalServerError, error.message);
         next(err);
     }
 });
@@ -129,7 +127,7 @@ router.post('/api/create/account', function (req, res, next) {
     }
 });
 
-router.all('/api*', function (req, res, next) {console.log('80');
+router.all('/api*', function (req, res, next) {
     // implementation for token verification
     try {
         var token = req.body.token || req.query.token || req.headers['x-access-token'];
