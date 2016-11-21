@@ -47,8 +47,8 @@ app.get('/*', function (req, res) {
     //res.send(messages.genInfo);
     //res.sendFile(path.join(__dirname, 'public','index1.html'));
 //});
-
-var server = app.listen(config.port, function () {
+var port = process.env.port || config.port; 
+var server = app.listen(port, function () {
     console.log(messages.messExpressServerRunning + config.port);
 });
 
